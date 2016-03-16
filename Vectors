@@ -1,0 +1,22 @@
+import java.util.Scanner;
+import static print.SystemOutPrint.sop;
+import static print.SystemOutPrint.sop_;
+/**
+ * Write a description of class Vectors here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class Vectors
+{
+    public static void main (String[] args)
+    {
+        VComponent v = new VComponent();
+        sop("Magnitude 3, 4: " + v.magnitude(3, 4));
+        sop("Magnitude 5, -10: " + v.magnitude(5, -10));
+        sop("Direction 3, 4: " + v.direction(3, 4));
+        sop("Direction 5, -10: " + v.direction(5, -10));
+        sop("Components 5, 60: " + v.xcomponent(5, 60) + v.ycomponent(5, 60));
+        sop("Resultant 5, 60, 10, 120: " + v.resultant(5, 60, 10, 120));
+    }
+}
