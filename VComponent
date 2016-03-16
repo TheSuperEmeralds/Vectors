@@ -1,0 +1,58 @@
+import java.lang.Math;
+/**
+ * Write a description of class VComponent here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class VComponent
+{
+    public double magnitude (double x, double y)
+    {
+        double mag = Math.sqrt((x*x) + (y*y));
+        return mag;
+    }
+    public double direction (double x, double y)
+    {
+        double ang = 0;
+        if (x > 0 && y > 0)
+        {
+            ang = Math.atan(y/x);
+        }
+        else if (x < 0 && y > 0)
+        {
+            ang = 90 + (Math.atan(x/y));
+        }
+        else if (x < 0 && y < 0)
+        {
+            ang = 180 + (Math.atan(y/x));
+        }
+        else if (x > 0 && y < 0)
+        {
+            ang = 270 + (Math.atan(x/y));
+        }
+        return ang;
+    }
+    public double xcomponent (double magnitude, double direction)
+    {
+        double x;
+        x = magnitude * Math.cos(direction);
+        return x;
+    }
+    public double ycomponent (double magnitude, double direction)
+    {
+        double y;
+        y = magnitude * Math.sin(direction);
+        return y;
+    }
+    public double resultant (double mag1, double dir1, double mag2, double dir2)
+    {
+        double mag3, x1, y1, x2, y2;
+        x1 = mag1 * Math.cos(dir1);
+        y1 = mag1 * Math.sin(dir1);
+        x2 = mag2 * Math.cos(dir2);
+        y2 = mag2 * Math.sin(dir2);
+        mag3 = Math.sqrt(((x1+x2)*(x1+x2)) + ((y1+y2)*(y1+y2)));
+        return mag3;
+    }
+}
